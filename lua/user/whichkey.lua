@@ -21,6 +21,7 @@ which_key.register({
 		s = { "<C-w>s", "h-split" },
 		d = { "<C-w>c", "close" },
 		D = { "<C-w>o", "close-unfocused" },
+		r = { "<C-w>r", "rotate" },
 		h = { "<C-w>h", "left" },
 		l = { "<C-w>l", "right" },
 		j = { "<C-w>j", "down" },
@@ -36,7 +37,7 @@ which_key.register({
 		h = { "<cmd>bprev<cr>", "prev" },
 		i = { "<cmd>Telescope buffers<cr>", "list" },
 	},
-})
+}, { prefix = "<leader>" })
 
 which_key.register({
 	g = {
