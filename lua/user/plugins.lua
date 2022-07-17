@@ -61,12 +61,13 @@ return packer.startup(function(use)
 	use({ "danymat/neogen" })
 	use({ "folke/trouble.nvim", branch = "main" })
 	use({ "folke/zen-mode.nvim" })
-	use({ "overcache/NeoSolarized" })
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim" })
 	use({ "lunarvim/darkplus.nvim" })
+	use({ "overcache/NeoSolarized" })
 	use({ "NLKNguyen/papercolor-theme" })
+    use({ "ellisonleao/gruvbox.nvim" })
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
