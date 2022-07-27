@@ -67,7 +67,7 @@ return packer.startup(function(use)
 	use({ "lunarvim/darkplus.nvim" })
 	use({ "overcache/NeoSolarized" })
 	use({ "NLKNguyen/papercolor-theme" })
-    use({ "ellisonleao/gruvbox.nvim" })
+	use({ "ellisonleao/gruvbox.nvim" })
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
@@ -83,6 +83,7 @@ return packer.startup(function(use)
 
 	-- LSP
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
+	use({ "williamboman/mason.nvim" })
 	use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
 	use({ "RRethy/vim-illuminate" })

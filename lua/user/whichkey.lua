@@ -63,6 +63,7 @@ which_key.register({
 
 which_key.register({
 	["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<cr>", "comment-out" },
+	[";"] = { "<cmd>Alpha<cr>", "Dashboard" },
 }, { prefix = "<leader>" })
 
 which_key.register({
