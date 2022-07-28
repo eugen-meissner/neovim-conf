@@ -68,6 +68,8 @@ return packer.startup(function(use)
 	use({ "overcache/NeoSolarized" })
 	use({ "NLKNguyen/papercolor-theme" })
 	use({ "ellisonleao/gruvbox.nvim" })
+	use({ "matsuuu/pinkmare" })
+	use({ "EdenEast/nightfox.nvim" })
 
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
