@@ -60,6 +60,7 @@ return packer.startup(function(use)
 	use({ "danymat/neogen" })
 	use({ "folke/trouble.nvim", branch = "main" })
 	use({ "folke/zen-mode.nvim" })
+	use({ "APZelos/blamer.nvim" })
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim" })
@@ -107,6 +108,7 @@ return packer.startup(function(use)
 	use({ "mfussenegger/nvim-dap" })
 	use({ "rcarriga/nvim-dap-ui" })
 	use({ "ravenxrz/DAPInstall.nvim" })
+	use({ "theHamsta/nvim-dap-virtual-text" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
