@@ -61,6 +61,7 @@ return packer.startup(function(use)
 	use({ "folke/trouble.nvim", branch = "main" })
 	use({ "folke/zen-mode.nvim" })
 	use({ "APZelos/blamer.nvim" })
+	use({ "vim-test/vim-test" })
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim" })

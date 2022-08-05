@@ -17,6 +17,7 @@ null_ls.setup({
 			extra_args = { "--single-quote", "--jsx-single-quote" },
 		}),
 		formatting.stylua,
+		formatting.jsonls,
 		-- formatting.csharpier,
 	},
 })
