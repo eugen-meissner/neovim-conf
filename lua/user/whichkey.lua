@@ -33,6 +33,7 @@ which_key.register({
 	b = {
 		name = "buffer",
 		d = { "<cmd>Bdelete<cr>", "delete" },
+		D = { "<cmd>Bdelete!<cr>", "hard-delete" },
 		l = { "<cmd>bnext<cr>", "next" },
 		h = { "<cmd>bprev<cr>", "prev" },
 		i = { "<cmd>Telescope buffers<cr>", "list" },

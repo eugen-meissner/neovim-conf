@@ -60,7 +60,6 @@ return packer.startup(function(use)
 	use({ "danymat/neogen" })
 	use({ "folke/trouble.nvim", branch = "main" })
 	use({ "folke/zen-mode.nvim" })
-	use({ "APZelos/blamer.nvim" })
 	use({ "vim-test/vim-test" })
 
 	-- Colorschemes
@@ -71,7 +70,7 @@ return packer.startup(function(use)
 	use({ "ellisonleao/gruvbox.nvim" })
 	use({ "matsuuu/pinkmare" })
 	use({ "EdenEast/nightfox.nvim" })
-
+	use({ "catppuccin/nvim", as = "catppuccin" })
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
 	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
@@ -104,6 +103,7 @@ return packer.startup(function(use)
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
 	use({ "TimUntersberger/neogit", branch = "master" })
+	use({ "APZelos/blamer.nvim" })
 
 	-- DAP
 	use({ "mfussenegger/nvim-dap" })
