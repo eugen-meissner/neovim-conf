@@ -58,8 +58,15 @@ return packer.startup(function(use)
 	use {"folke/which-key.nvim"}
 
 	-- Colorschemes
-  use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
-  use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }
+	use({ "folke/tokyonight.nvim" })
+	use({ "lunarvim/darkplus.nvim" })
+	use({ "overcache/NeoSolarized" })
+	use({ "NLKNguyen/papercolor-theme" })
+	use({ "ellisonleao/gruvbox.nvim" })
+	use({ "matsuuu/pinkmare" })
+	use({ "EdenEast/nightfox.nvim" })
+	use({ "catppuccin/nvim", as = "catppuccin" })
+  use({ "sainnhe/everforest" })
 
 	-- Cmp 
   use { "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" } -- The completion plugin
@@ -80,6 +87,12 @@ return packer.startup(function(use)
 	use { "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
   use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
 
+  -- Docs
+  use {
+    'kkoomen/vim-doge',
+    run = ':call doge#install()'
+  }
+
 	-- Telescope
 	use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
 
@@ -90,7 +103,33 @@ return packer.startup(function(use)
 	}
 
 	-- Git
-	use { "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" }
+	use({ "lewis6991/gitsigns.nvim" })
+	use({ "TimUntersberger/neogit", branch = "master" })
+	use({ "APZelos/blamer.nvim" })
+
+	-- DAP
+	use({ "mfussenegger/nvim-dap" })
+	use({ "rcarriga/nvim-dap-ui" })
+	use({ "ravenxrz/DAPInstall.nvim" })
+	use({ "theHamsta/nvim-dap-virtual-text" })
+
+  -- Copilot
+  use {
+    "zbirenbaum/copilot.lua",
+    event = "VimEnter",
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup()
+      end, 100)
+    end,
+  }
+  use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function ()
+      require("copilot_cmp").setup()
+    end
+  }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

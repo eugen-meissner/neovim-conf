@@ -25,7 +25,7 @@ local setup = {
   },
   -- add operators that will trigger motion and text object completion
   -- to enable all native operators, set the preset / operators plugin above
-  -- operators = { gc = "Comments" },
+  -- operators = { gc = "Comments" },whichkey
   key_labels = {
     -- override the label used to display some keys. It doesn't effect WK in any other way.
     -- For example:
@@ -84,10 +84,10 @@ local mappings = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
   },
+  ["g"] = { "<cmd>Neogit<cr>", "Git" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  ["w"] = { "<cmd>w!<CR>", "Save" },
+  ["d"] = { "<cmd>DogeGenerate<cr>", "Generate Docs" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -95,42 +95,29 @@ local mappings = {
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+  ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
+  ["x"] = { "<cmd>Bdelete!<cr>", "close" },
 
-  p = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
-  },
+	p = {
+		name = "Projects",
+		p = { "<cmd>Telescope projects<cr>", "recent-projects" },
+		f = { "<cmd>Telescope find_files<cr>", "find-files" },
+		g = { "<cmd>Telescope live_grep<cr>", "search-project" },
+	},
 
-  g = {
-    name = "Git",
-    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-    j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-    k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-    l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-    p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-    r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-    R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-    s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-    u = {
-      "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-      "Undo Stage Hunk",
-    },
-    o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-    d = {
-      "<cmd>Gitsigns diffthis HEAD<cr>",
-      "Diff",
-    },
-  },
+	w = {
+		name = "Window",
+		v = { "<C-w>v", "v-split" },
+		h = { "<C-w>s", "h-split" },
+		d = { "<C-w>c", "close" },
+		D = { "<C-w>o", "close-unfocused" },
+		r = { "<C-w>r", "rotate" },
+	},
 
-  l = {
+  c = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+    c = { "<cmd>Copilot panel<cr>", "Suggestions" },
     d = {
       "<cmd>Telescope diagnostics bufnr=0<cr>",
       "Document Diagnostics",
