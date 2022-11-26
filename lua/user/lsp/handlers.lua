@@ -80,7 +80,7 @@ M.on_attach = function(client, bufnr)
 		client.server_capabilities.documentFormattingProvider = false
 	end
 
-	if client.name == "omnisharp" then
+	if client.name == "jsonls" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
 
