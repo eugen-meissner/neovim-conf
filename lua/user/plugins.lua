@@ -111,8 +111,6 @@ return packer.startup(function(use)
 	use({ "APZelos/blamer.nvim" })
 
 	-- Debugging
-	use({ "skywind3000/asyncrun.vim" })
-	use({ "skywind3000/asynctasks.vim" })
 	use({ "puremourning/vimspector" })
 
 	-- Copilot
@@ -121,7 +119,13 @@ return packer.startup(function(use)
 		event = "VimEnter",
 		config = function()
 			vim.defer_fn(function()
-				require("copilot").setup()
+				require("copilot").setup({
+					suggestion = {
+						enabled = true,
+						auto_trigger = true,
+						debounce = 75,
+					},
+				})
 			end, 100)
 		end,
 	})

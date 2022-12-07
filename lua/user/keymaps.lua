@@ -18,8 +18,6 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
-keymap("n", "<F5>", ":! dotnet build<CR> | :call vimspector#Launch()<CR>", opts)
-
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -32,6 +30,13 @@ keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
+-- Copilot
+keymap("n", "<F2>", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
+keymap("i", "<C-CR>", "<cmd>lua require('copilot.suggestion').accept()<CR>", opts)
+keymap("i", "<C-BS>", "<cmd>lua require('copilot.suggestion').reject()<CR>", opts)
+keymap("i", "<C-,>", "<cmd>lua require('copilot.suggestion').prev()<CR>", opts)
+keymap("i", "<C-.>", "<cmd>lua require('copilot.suggestion').next()<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
