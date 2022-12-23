@@ -161,6 +161,11 @@ local mappings = {
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
+	r = {
+		name = "Run Tests",
+		r = { "<cmd>lua require('neotest').run.run()<CR>", "Run nearest test" },
+		a = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>", "Run tests in file" },
+	},
 }
 
 which_key.setup(setup)
