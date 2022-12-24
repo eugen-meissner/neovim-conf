@@ -121,7 +121,7 @@ return packer.startup(function(use)
 
 	-- Debugging
 	use({ "mfussenegger/nvim-dap" })
-	-- use({ "puremourning/vimspector" })
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 
 	-- Copilot
 	use({
