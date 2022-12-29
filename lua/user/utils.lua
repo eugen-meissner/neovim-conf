@@ -65,10 +65,11 @@ utils.dotnet_build_project = function()
 	-- local path = vim.fn.input('Path to your *proj file', default_path, 'file')
 	-- local command = 'ls ' .. vim.fn.getcwd() .. ' *.csproj'
 	-- print(command)
-	local path = io.popen("ls " .. vim.fn.getcwd() .. "/*.csproj"):read("*a")
+	local path = io.popen("ls " .. vim.fn.getcwd()):read("*a")
 	-- print('path:' .. path)
 	-- vim.g['dotnet_last_proj_path'] = path
 	local cmd = "dotnet build -c Debug " .. path --.. ' &> /dev/null'
+---@diagnostic disable-next-line: unused-local
 	local f = io.popen(cmd):read("*a")
 	-- print(f)
 	-- if f == 0 then

@@ -87,7 +87,6 @@ local mappings = {
 	["g"] = { "<cmd>Neogit<cr>", "Git" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["d"] = { "<cmd>DogeGenerate<cr>", "Generate Docs" },
-	["q"] = { "<cmd>VimspectorReset<CR>", "Quit" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["f"] = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -164,6 +163,7 @@ local mappings = {
 	r = {
 		name = "Run Tests",
 		r = { "<cmd>lua require('neotest').run.run()<CR>", "Run nearest test" },
+		d = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<CR>", "Debug nearest test" },
 		a = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>", "Run tests in file" },
 	},
 }

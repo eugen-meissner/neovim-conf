@@ -14,10 +14,18 @@ end
 -- Remember to allow execution of unsigned netcoredbg executabe on macOS
 --
 -- If you are using amd64/x86 computer, you may install netcoredbg with Mason.
---
+
+local netcore_debugger_location = "~/.local/share/nvim/mason/packages/netcoredbg/build/netcoredbg"
+
 dap.adapters.coreclr = {
 	type = "executable",
-	command = vim.fn.expandcmd("~/.local/share/nvim/mason/packages/netcoredbg/netcoredbg"),
+	command = vim.fn.expandcmd(netcore_debugger_location),
+	args = { "--interpreter=vscode" },
+}
+
+dap.adapters.netcoredbg = {
+	type = "executable",
+	command = vim.fn.expandcmd(netcore_debugger_location),
 	args = { "--interpreter=vscode" },
 }
 
