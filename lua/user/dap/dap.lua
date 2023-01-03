@@ -7,27 +7,13 @@ if not utils_status_ok then
 	return
 end
 
--- Note December 16 2022
--- Manually installed netcoredbg for Mac M1 ARM64
--- https://github.com/codeprefect/netcoredbg/releases/
---
--- Remember to allow execution of unsigned netcoredbg executabe on macOS
---
--- If you are using amd64/x86 computer, you may install netcoredbg with Mason.
-
-local netcore_debugger_location = "~/.local/share/nvim/mason/packages/netcoredbg/build/netcoredbg"
-
 dap.adapters.coreclr = {
 	type = "executable",
-	command = vim.fn.expandcmd(netcore_debugger_location),
+	command = vim.fn.expandcmd("~/.local/share/nvim/mason/packages/netcoredbg/build/netcoredbg"),
 	args = { "--interpreter=vscode" },
 }
-
-dap.adapters.netcoredbg = {
-	type = "executable",
-	command = vim.fn.expandcmd(netcore_debugger_location),
-	args = { "--interpreter=vscode" },
-}
+-- Neotest requires a netcoredbg adapter for some reason.
+dap.adapters.netcoredbg = dap.adapters.coreclr
 
 dap.configurations.cs = utils.get_debug_config()
 
@@ -35,7 +21,7 @@ if dap.configurations.cs == nil then
 	dap.configurations.cs = {
 		{
 			type = "coreclr",
-			name = "launch - netcoredbg",
+			name = "Debug",
 			request = "launch",
 			program = function()
 				utils.dotnet_build_project()
