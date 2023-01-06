@@ -21,8 +21,14 @@ if dap.configurations.cs == nil then
 	dap.configurations.cs = {
 		{
 			type = "coreclr",
-			name = "Debug",
+			name = "launch - netcoredbg",
 			request = "launch",
+			args = {
+				"--urls=https://localhost:7035/",
+			},
+			env = {
+				ASPNETCORE_ENVIRONMENT = "Development",
+			},
 			program = function()
 				utils.dotnet_build_project()
 				return utils.get_debug_program()

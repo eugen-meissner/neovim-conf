@@ -58,25 +58,16 @@ utils.replace_string_values = function(original, to_replace, replace_with)
 end
 
 utils.dotnet_build_project = function()
-	-- local default_path = vim.fn.getcwd() .. '/'
-	-- if vim.g['dotnet_last_proj_path'] ~= nil then
-	--     default_path = vim.g['dotnet_last_proj_path']
-	-- end
-	-- local path = vim.fn.input('Path to your *proj file', default_path, 'file')
-	-- local command = 'ls ' .. vim.fn.getcwd() .. ' *.csproj'
-	-- print(command)
-	local path = io.popen("ls " .. vim.fn.getcwd()):read("*a")
-	-- print('path:' .. path)
-	-- vim.g['dotnet_last_proj_path'] = path
-	local cmd = "dotnet build -c Debug " .. path --.. ' &> /dev/null'
----@diagnostic disable-next-line: unused-local
-	local f = io.popen(cmd):read("*a")
-	-- print(f)
-	-- if f == 0 then
-	--     print('\nBuild: ✔️ ')
-	-- else
-	--     print('\nBuild: ❌ (code: ' .. f .. ')')
-	-- end
+	local path = vim.fn.getcwd() .. "/"
+	local cmd = "dotnet build --configuration Debug " .. path .. " > /dev/null"
+	print("")
+	print("Cmd to execute: " .. cmd)
+	local f = os.execute(cmd)
+	if f == 0 then
+		print("\nBuild: ✔️ ")
+	else
+		print("\nBuild: ❌ (code: " .. f .. ")")
+	end
 end
 
 utils.get_debug_config = function()
