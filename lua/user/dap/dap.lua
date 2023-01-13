@@ -23,9 +23,11 @@ if dap.configurations.cs == nil then
 			type = "coreclr",
 			name = "launch - netcoredbg",
 			request = "launch",
+			justMyCode = false,
 			args = {
 				"--urls=https://localhost:7035/",
 			},
+			cwd = "{workspaceFolder}",
 			env = {
 				ASPNETCORE_ENVIRONMENT = "Development",
 			},
