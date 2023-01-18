@@ -97,6 +97,7 @@ local mappings = {
 	["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
 	["x"] = { "<cmd>Bdelete!<cr>", "close" },
 	["l"] = { '<cmd>exec &bg=="light"? "set bg=dark" : "set bg=light"<CR>', "Toggle Theme" },
+	["k"] = { "<cmd>TransparentToggle<CR>", "Toggle Transparency" },
 
 	w = {
 		name = "Window",

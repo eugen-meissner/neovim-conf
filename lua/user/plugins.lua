@@ -58,6 +58,7 @@ return packer.startup(function(use)
 	use({ "folke/which-key.nvim" })
 	use({ "tpope/vim-repeat" })
 	use({ "ggandor/leap.nvim" })
+	use({ "xiyaowong/nvim-transparent" })
 
 	-- Colorschemes
 	use({ "lunarvim/darkplus.nvim" })
@@ -68,7 +69,8 @@ return packer.startup(function(use)
 	use({ "EdenEast/nightfox.nvim" })
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use({ "sainnhe/everforest" })
-	use({ "https://git.sr.ht/~romainl/vim-bruin" })
+	use({ "huyvohcmc/atlas.vim" })
+	use({ "aditya-azad/candle-grey" })
 
 	-- Cmp
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
