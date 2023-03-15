@@ -59,8 +59,10 @@ return packer.startup(function(use)
 	use({ "tpope/vim-repeat" })
 	use({ "ggandor/leap.nvim" })
 	use({ "xiyaowong/nvim-transparent" })
+	use({ "nvim-neorg/neorg", run = { ":Neorg sync-parsers" }, requires = { "nvim-lua/plenary.nvim" } })
 
 	-- Colorschemes
+	use({ "nyoom-engineering/oxocarbon.nvim" })
 	use({ "lunarvim/darkplus.nvim" })
 	use({ "overcache/NeoSolarized" })
 	use({ "NLKNguyen/papercolor-theme" })
@@ -91,6 +93,7 @@ return packer.startup(function(use)
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
 	use({ "RRethy/vim-illuminate" })
 	use({ "folke/trouble.nvim" })
+	use({ "ray-x/lsp_signature.nvim" })
 
 	-- Docs
 	use({
