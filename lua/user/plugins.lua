@@ -122,12 +122,14 @@ return packer.startup(function(use)
 			"nvim-treesitter/nvim-treesitter",
 			"antoinemadec/FixCursorHold.nvim",
 			"Issafalcon/neotest-dotnet",
+			"rouge8/neotest-rust",
 		},
 	})
+	use({ "andythigpen/nvim-coverage" })
 
 	-- Debugging
 	use({ "mfussenegger/nvim-dap" })
-	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use({ "rcarriga/nvim-dap-ui", requires = { "nvim-lua/plenary.nvim" } })
 
 	-- Copilot
 	use({

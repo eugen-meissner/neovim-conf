@@ -1,6 +1,3 @@
-local colorscheme = "oxocarbon"
+local colorscheme = "carbonfox"
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-	return
-end
+local _, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)

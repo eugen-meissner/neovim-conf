@@ -10,6 +10,8 @@ local servers = {
 	"jsonls",
 	"yamlls",
 	"hls",
+	"rust_analyzer",
+	"eslint",
 }
 
 local settings = {

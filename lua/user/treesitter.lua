@@ -19,8 +19,9 @@ configs.setup({
 		"yaml",
 		"markdown",
 		"markdown_inline",
-    "haskell",
+		"haskell",
 		"c_sharp",
+		"norg",
 	}, -- one of "all" or a list of languages
 	ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
 	highlight = {
