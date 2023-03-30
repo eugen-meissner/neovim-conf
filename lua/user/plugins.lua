@@ -73,6 +73,7 @@ return packer.startup(function(use)
 	use({ "sainnhe/everforest" })
 	use({ "huyvohcmc/atlas.vim" })
 	use({ "aditya-azad/candle-grey" })
+	use({ "rebelot/kanagawa.nvim" })
 
 	-- Cmp
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
