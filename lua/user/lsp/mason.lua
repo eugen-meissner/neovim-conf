@@ -12,6 +12,7 @@ local servers = {
 	"hls",
 	"rust_analyzer",
 	"eslint",
+	"terraformls",
 }
 
 local settings = {
