@@ -43,6 +43,7 @@ return packer.startup(function(use)
 	use({ "wbthomason/packer.nvim" }) -- Have packer manage itself
 	use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
 	use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
+	use({ "tpope/vim-surround" })
 	use({ "numToStr/Comment.nvim" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 	use({ "kyazdani42/nvim-web-devicons" })
@@ -58,16 +59,10 @@ return packer.startup(function(use)
 	use({ "folke/which-key.nvim" })
 	use({ "tpope/vim-repeat" })
 	use({ "ggandor/leap.nvim" })
-	use({ "xiyaowong/nvim-transparent" })
-	use({ "nvim-neorg/neorg", run = { ":Neorg sync-parsers" }, requires = { "nvim-lua/plenary.nvim" } })
 
 	-- Colorschemes
 	use({ "nyoom-engineering/oxocarbon.nvim" })
-	use({ "lunarvim/darkplus.nvim" })
-	use({ "overcache/NeoSolarized" })
-	use({ "NLKNguyen/papercolor-theme" })
 	use({ "ellisonleao/gruvbox.nvim" })
-	use({ "matsuuu/pinkmare" })
 	use({ "EdenEast/nightfox.nvim" })
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use({ "sainnhe/everforest" })
