@@ -77,7 +77,18 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Debugging --
 keymap("n", "<F9>", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
-keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
+keymap("n", "<F8>", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", opts)
+keymap("n", "<F5>", "", {
+	callback = function()
+		if vim.bo.filetype == "rust" then
+			require("rust-tools").debuggables.debuggables()
+		else
+			require("dap").continue()
+		end
+	end,
+	noremap = true,
+	silent = true,
+})
 keymap("n", "<F11>", "<cmd>lua require'dap'.step_into()<cr>", opts)
 keymap("n", "<F10>", "<cmd>lua require'dap'.step_over()<cr>", opts)
 keymap("n", "<S-F10>", "<cmd>lua require'dap'.step_out()<cr>", opts)

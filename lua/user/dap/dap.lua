@@ -7,34 +7,31 @@ if not utils_status_ok then
 	return
 end
 
+local mason_registry = require("mason-registry")
+-- C# .NET
 dap.adapters.coreclr = {
 	type = "executable",
-	command = vim.fn.expandcmd("~/.local/share/nvim/mason/packages/netcoredbg/build/netcoredbg"),
+	command = mason_registry.get_package("netcoredbg"):get_install_path() .. "/build/netcoredbg",
 	args = { "--interpreter=vscode" },
 }
 -- Neotest requires a netcoredbg adapter for some reason.
 dap.adapters.netcoredbg = dap.adapters.coreclr
-
-dap.configurations.cs = utils.get_debug_config()
-
-if dap.configurations.cs == nil then
-	dap.configurations.cs = {
-		{
-			type = "coreclr",
-			name = "launch - netcoredbg",
-			request = "launch",
-			justMyCode = false,
-			args = {
-				"--urls=https://localhost:7035/",
-			},
-			cwd = "{workspaceFolder}",
-			env = {
-				ASPNETCORE_ENVIRONMENT = "Development",
-			},
-			program = function()
-				utils.dotnet_build_project()
-				return utils.get_debug_program()
-			end,
+dap.configurations.cs = {
+	{
+		type = "coreclr",
+		name = "launch - netcoredbg",
+		request = "launch",
+		justMyCode = false,
+		args = {
+			"--urls=https://localhost:7035/",
 		},
-	}
-end
+		cwd = "{workspaceFolder}",
+		env = {
+			ASPNETCORE_ENVIRONMENT = "Development",
+		},
+		program = function()
+			utils.dotnet_build_project()
+			return utils.get_debug_program()
+		end,
+	},
+}

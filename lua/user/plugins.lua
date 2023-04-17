@@ -59,6 +59,7 @@ return packer.startup(function(use)
 	use({ "folke/which-key.nvim" })
 	use({ "tpope/vim-repeat" })
 	use({ "ggandor/leap.nvim" })
+	use({ "ThePrimeagen/vim-be-good" })
 
 	-- Colorschemes
 	use({ "nyoom-engineering/oxocarbon.nvim" })
@@ -90,6 +91,13 @@ return packer.startup(function(use)
 	use({ "RRethy/vim-illuminate" })
 	use({ "folke/trouble.nvim" })
 	use({ "ray-x/lsp_signature.nvim" })
+	use({ "simrat39/rust-tools.nvim" })
+	use({
+		"j-hui/fidget.nvim",
+		config = function()
+			require("fidget").setup()
+		end,
+	})
 
 	-- Docs
 	use({
@@ -125,6 +133,7 @@ return packer.startup(function(use)
 
 	-- Debugging
 	use({ "mfussenegger/nvim-dap" })
+	use({ "theHamsta/nvim-dap-virtual-text" })
 	use({ "rcarriga/nvim-dap-ui", requires = { "nvim-lua/plenary.nvim" } })
 
 	-- Copilot

@@ -12,7 +12,7 @@ dapui.setup({
 	icons = { expanded = "", collapsed = "", current_frame = "" },
 	mappings = {
 		-- Use a table to apply multiple mappings
-		expand = { "<CR>", "<2-LeftMouse>" },
+		expand = { "<CR>", "<2-LeftMouse>", "<Tab>" },
 		open = "o",
 		remove = "d",
 		edit = "e",
@@ -46,7 +46,7 @@ dapui.setup({
 				"stacks",
 				"watches",
 			},
-			size = 40, -- 40 columns
+			size = 50, -- 50 columns
 			position = "left",
 		},
 		{
