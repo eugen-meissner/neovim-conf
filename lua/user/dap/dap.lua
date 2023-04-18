@@ -8,10 +8,11 @@ if not utils_status_ok then
 end
 
 local mason_registry = require("mason-registry")
+local path = mason_registry.get_package("netcoredbg"):get_install_path() .. "/build/netcoredbg"
 -- C# .NET
 dap.adapters.coreclr = {
 	type = "executable",
-	command = mason_registry.get_package("netcoredbg"):get_install_path() .. "/build/netcoredbg",
+	command = path,
 	args = { "--interpreter=vscode" },
 }
 -- Neotest requires a netcoredbg adapter for some reason.
