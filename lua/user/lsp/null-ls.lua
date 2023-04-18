@@ -13,6 +13,7 @@ null_ls.setup({
 	sources = {
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
+		formatting.xmlformat,
 		formatting.prettier,
 		diagnostics.eslint,
 	},

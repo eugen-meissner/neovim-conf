@@ -109,8 +109,8 @@ local mappings = {
 	},
 
 	c = {
-		name = "LSP",
-		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+		name = "Code",
+		a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
 		c = { "<cmd>Copilot panel<cr>", "Suggestions" },
 		d = {
 			"<cmd>Telescope diagnostics bufnr=0<cr>",
@@ -120,7 +120,7 @@ local mappings = {
 			"<cmd>Telescope diagnostics<cr>",
 			"Workspace Diagnostics",
 		},
-		f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
+		f = { "<cmd>Lspsaga lsp_finder<cr>", "Find Symbol" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
 		j = {
@@ -133,7 +133,8 @@ local mappings = {
 		},
 		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
-		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+		r = { "<cmd>Lspsaga rename<cr>", "Rename" },
+		R = { "<cmd>Lspsaga rename ++project<cr>", "Deep Rename" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
@@ -154,10 +155,6 @@ local mappings = {
 	},
 	t = {
 		name = "Terminal",
-		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
@@ -167,6 +164,8 @@ local mappings = {
 		r = { "<cmd>lua require('neotest').run.run()<CR>", "Run nearest test" },
 		d = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<CR>", "Debug nearest test" },
 		a = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>", "Run tests in file" },
+		s = { "<cmd>lua require('neotest').summary.toggle()<CR>", "Test Summary" },
+		o = { "<cmd>lua require('neotest').output_panel.toggle()<CR>", "Test Summary" },
 	},
 }
 

@@ -61,6 +61,9 @@ return packer.startup(function(use)
 	use({ "ggandor/leap.nvim" })
 	use({ "ThePrimeagen/vim-be-good" })
 
+	-- Useless but fun?
+	use("eandrju/cellular-automaton.nvim")
+
 	-- Colorschemes
 	use({ "nyoom-engineering/oxocarbon.nvim" })
 	use({ "ellisonleao/gruvbox.nvim" })
@@ -92,6 +95,14 @@ return packer.startup(function(use)
 	use({ "folke/trouble.nvim" })
 	use({ "ray-x/lsp_signature.nvim" })
 	use({ "simrat39/rust-tools.nvim" })
+	use({
+		"glepnir/lspsaga.nvim",
+		requires = {
+			{ "nvim-tree/nvim-web-devicons" },
+			--Please make sure you install markdown and markdown_inline parser
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	})
 	use({
 		"j-hui/fidget.nvim",
 		config = function()
