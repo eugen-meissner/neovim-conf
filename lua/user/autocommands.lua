@@ -5,6 +5,7 @@ vim.cmd([[
     autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200}) 
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
+    autocmd TermOpen term://* setlocal nonumber norelativenumber
   augroup end
 
   augroup _git
@@ -33,6 +34,7 @@ vim.cmd([[
     autocmd!
     autocmd BufWritePre * lua vim.lsp.buf.format()
   augroup end
+
 ]])
 
 -- Automatically close tab/vim when nvim-tree is the last window in the tab

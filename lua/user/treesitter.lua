@@ -28,6 +28,9 @@ configs.setup({
 		enable = true, -- false will disable the whole extension
 		disable = { "css" }, -- list of language that will be disabled
 	},
+	autotag = {
+		enable = true,
+	},
 	autopairs = {
 		enable = true,
 	},
