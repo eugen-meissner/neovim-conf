@@ -13,6 +13,7 @@ local servers = {
 	"rust_analyzer",
 	"eslint",
 	"terraformls",
+	"lemminx",
 }
 
 local settings = {

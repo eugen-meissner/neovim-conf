@@ -85,7 +85,6 @@ local mappings = {
 		"Buffers",
 	},
 	["g"] = { "<cmd>Neogit<cr>", "Git" },
-	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["d"] = { "<cmd>DogeGenerate<cr>", "Generate Docs" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["f"] = {
