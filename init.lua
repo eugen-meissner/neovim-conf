@@ -10,6 +10,7 @@ require("user.treesitter")
 require("user.autopairs")
 require("user.comment")
 require("user.nvim-tree")
+-- it's broken for now
 --require("user.bufferline")
 require("user.lualine")
 require("user.toggleterm")
