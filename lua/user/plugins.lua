@@ -62,11 +62,13 @@ return packer.startup(function(use)
 	use({ "ggandor/leap.nvim" })
 	use({ "ThePrimeagen/harpoon" })
 	use({ "ThePrimeagen/vim-be-good" })
+	use({ "xiyaowong/transparent.nvim" })
 
 	-- Useless but fun?
 	use("eandrju/cellular-automaton.nvim")
 
 	-- Colorschemes
+	use({ "olivercederborg/poimandres.nvim" })
 	use({ "nyoom-engineering/oxocarbon.nvim" })
 	use({ "ellisonleao/gruvbox.nvim" })
 	use({ "EdenEast/nightfox.nvim" })
@@ -75,6 +77,8 @@ return packer.startup(function(use)
 	use({ "huyvohcmc/atlas.vim" })
 	use({ "aditya-azad/candle-grey" })
 	use({ "rebelot/kanagawa.nvim" })
+	use({ "kyazdani42/blue-moon" })
+	use({ "shaunsingh/moonlight.nvim" })
 
 	-- Cmp
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
