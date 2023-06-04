@@ -1,4 +1,4 @@
-local colorscheme = "poimandres"
+local colorscheme = "kanagawa"
 
 if colorscheme == "moonlight" then
 	vim.g.moonlight_italic_comments = true

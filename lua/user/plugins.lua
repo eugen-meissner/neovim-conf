@@ -63,7 +63,6 @@ return packer.startup(function(use)
 	use({ "ThePrimeagen/harpoon" })
 	use({ "ThePrimeagen/vim-be-good" })
 	use({ "xiyaowong/transparent.nvim" })
-
 	-- Useless but fun?
 	use("eandrju/cellular-automaton.nvim")
 
