@@ -6,7 +6,9 @@ end
 configs.setup({
 	ensure_installed = {
 		"bash",
+		"astro",
 		"c",
+		"cpp",
 		"javascript",
 		"json",
 		"lua",

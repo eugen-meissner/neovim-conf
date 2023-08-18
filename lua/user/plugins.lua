@@ -78,7 +78,7 @@ return packer.startup(function(use)
 	use({ "rebelot/kanagawa.nvim" })
 	use({ "kyazdani42/blue-moon" })
 	use({ "shaunsingh/moonlight.nvim" })
-
+	use({ "xero/miasma.nvim" })
 	-- Cmp
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
 	use({ "hrsh7th/cmp-buffer" }) -- buffer completions

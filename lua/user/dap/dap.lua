@@ -8,7 +8,7 @@ if not utils_status_ok then
 end
 
 local mason_registry = require("mason-registry")
-local path = mason_registry.get_package("netcoredbg"):get_install_path() .. "/build/netcoredbg"
+local path = "/Users/eugenmeissner/.local/share/nvim/mason/bin/netcoredbg"
 -- C# .NET
 dap.adapters.coreclr = {
 	type = "executable",
@@ -28,7 +28,7 @@ dap.configurations.cs = {
 		},
 		cwd = "{workspaceFolder}",
 		env = {
-			ASPNETCORE_ENVIRONMENT = "Development",
+			ASPNETCORE_ENVIRONMENT = "Production",
 		},
 		program = function()
 			utils.dotnet_build_project()
