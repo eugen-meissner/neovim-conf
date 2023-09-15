@@ -8,7 +8,11 @@ if not utils_status_ok then
 end
 
 local mason_registry = require("mason-registry")
-local path = "/Users/eugenmeissner/.local/share/nvim/mason/bin/netcoredbg"
+
+-- set local variable for the users root
+local root = vim.fn.expand("$HOME")
+local path = root .. "/.local/share/nvim/mason/packages/netcoredbg/netcoredbg"
+
 -- C# .NET
 dap.adapters.coreclr = {
 	type = "executable",
@@ -28,7 +32,7 @@ dap.configurations.cs = {
 		},
 		cwd = "{workspaceFolder}",
 		env = {
-			ASPNETCORE_ENVIRONMENT = "Production",
+			ASPNETCORE_ENVIRONMENT = "Development",
 		},
 		program = function()
 			utils.dotnet_build_project()
