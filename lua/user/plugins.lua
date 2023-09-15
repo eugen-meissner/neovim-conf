@@ -94,7 +94,7 @@ return packer.startup(function(use)
 	-- LSP
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
 	use({ "williamboman/mason.nvim" }) -- simple to use language server installer
-	use({ "Hoffs/omnisharp-extended-lsp.nvim" })
+	use({ "Decodetalkers/csharpls-extended-lsp.nvim" })
 	use({ "williamboman/mason-lspconfig.nvim" })
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
 	use({ "RRethy/vim-illuminate" })

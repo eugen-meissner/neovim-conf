@@ -1,6 +1,6 @@
 local servers = {
 	"lua_ls",
-	"omnisharp",
+	"csharp_ls",
 	"cssls",
 	"html",
 	"tailwindcss",
