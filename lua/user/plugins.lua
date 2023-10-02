@@ -56,6 +56,7 @@ return packer.startup(function(use)
 	use({ "ahmedkhalf/project.nvim" })
 	use({ "lewis6991/impatient.nvim" })
 	use({ "lukas-reineke/indent-blankline.nvim" })
+	use({ "HiPhish/rainbow-delimiters.nvim" })
 	use({ "goolord/alpha-nvim" })
 	use({ "folke/which-key.nvim" })
 	use({ "tpope/vim-repeat" })
@@ -118,6 +119,7 @@ return packer.startup(function(use)
 	})
 	use({
 		"j-hui/fidget.nvim",
+		tag = "legacy",
 		config = function()
 			require("fidget").setup()
 		end,
