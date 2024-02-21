@@ -29,10 +29,11 @@ dap.configurations.cs = {
 		justMyCode = false,
 		args = {
 			"--urls=https://localhost:7035/",
+			-- "--contentRoot=wwwroot",
 		},
 		cwd = "{workspaceFolder}",
 		env = {
-			ASPNETCORE_ENVIRONMENT = "Development",
+			ASPNETCORE_ENVIRONMENT = "Production",
 		},
 		program = function()
 			utils.dotnet_build_project()
