@@ -1,4 +1,4 @@
-local servers = {
+local lsp_servers = {
 	"lua_ls",
 	"omnisharp",
 	"cssls",
@@ -30,10 +30,29 @@ local settings = {
 }
 
 require("mason").setup(settings)
-require("mason-lspconfig").setup({
-	ensure_installed = servers,
-	automatic_installation = true,
+-- require("mason-lspconfig").setup({
+-- 	ensure_installed = lsp_servers,
+-- 	automatic_installation = true,
+-- })
+require("mason-nvim-dap").setup({
+	-- Makes a best effort to setup the various debuggers with
+	-- reasonable debug configurations
+	automatic_setup = true,
+
+	-- You can provide additional configuration to the handlers,
+	-- see mason-nvim-dap README for more information
+	handlers = {},
+
+	-- You'll need to check that you have the required things installed
+	-- online, please don't ask me how to install them :)
+	ensure_installed = {
+		"codelldb",
+		"netcoredbg",
+	},
 })
+
+require("overseer").setup()
+require("dap.ext.vscode").json_decode = require("overseer.json").decode
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
@@ -42,7 +61,7 @@ end
 
 local opts = {}
 
-for _, server in pairs(servers) do
+for _, server in pairs(lsp_servers) do
 	opts = {
 		on_attach = require("user.lsp.handlers").on_attach,
 		capabilities = require("user.lsp.handlers").capabilities,

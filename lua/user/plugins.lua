@@ -95,9 +95,11 @@ return packer.startup(function(use)
 	-- LSP
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
 	use({ "williamboman/mason.nvim" }) -- simple to use language server installer
+	use({ "williamboman/mason-lspconfig.nvim" })
+	use({ "stevearc/overseer.nvim" }) -- task runner, used for launch.json projects
+	use({ "jay-babu/mason-nvim-dap.nvim" })
 	use({ "Hoffs/omnisharp-extended-lsp.nvim" })
 	-- use({ "Decodetalkers/csharpls-extended-lsp.nvim" })
-	use({ "williamboman/mason-lspconfig.nvim" })
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
 	use({ "RRethy/vim-illuminate" })
 	use({ "folke/trouble.nvim" })
@@ -120,7 +122,6 @@ return packer.startup(function(use)
 	})
 	use({
 		"j-hui/fidget.nvim",
-		tag = "legacy",
 		config = function()
 			require("fidget").setup()
 		end,

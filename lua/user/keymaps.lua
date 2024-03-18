@@ -92,6 +92,12 @@ keymap("n", "<F5>", "", {
 		if vim.bo.filetype == "rust" then
 			require("rust-tools").debuggables.debuggables()
 		else
+			if vim.fn.filereadable(".vscode/launch.json") then
+				require("dap.ext.vscode").load_launchjs(
+					nil,
+					{ codelldb = { "rust" }, lldb = { "rust" }, coreclr = { "cs" } }
+				)
+			end
 			require("dap").continue()
 		end
 	end,
