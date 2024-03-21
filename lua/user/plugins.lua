@@ -64,6 +64,24 @@ return packer.startup(function(use)
 	use({ "ThePrimeagen/harpoon" })
 	use({ "ThePrimeagen/vim-be-good" })
 	use({ "xiyaowong/transparent.nvim" })
+
+	--markdown
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
+
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	})
+
 	-- Useless but fun?
 	use("eandrju/cellular-automaton.nvim")
 
