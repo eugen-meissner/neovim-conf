@@ -122,7 +122,7 @@ return packer.startup(function(use)
 	use({ "RRethy/vim-illuminate" })
 	use({ "folke/trouble.nvim" })
 	use({ "ray-x/lsp_signature.nvim" })
-	use({ "simrat39/rust-tools.nvim" })
+	use({ "mrcjkb/rustaceanvim", version = "^4", ft = { "rust" } })
 	use({
 		"saecki/crates.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
@@ -180,7 +180,7 @@ return packer.startup(function(use)
 	-- Debugging
 	use({ "mfussenegger/nvim-dap" })
 	use({ "theHamsta/nvim-dap-virtual-text" })
-	use({ "rcarriga/nvim-dap-ui", requires = { "nvim-lua/plenary.nvim" } })
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
 
 	-- Copilot
 	use({

@@ -10,7 +10,6 @@ local lsp_servers = {
 	"jsonls",
 	"yamlls",
 	"hls",
-	"rust_analyzer",
 	"eslint",
 	"terraformls",
 	"lemminx",

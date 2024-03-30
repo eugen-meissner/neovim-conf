@@ -89,17 +89,13 @@ keymap("n", "<F9>", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 keymap("n", "<F8>", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", opts)
 keymap("n", "<F5>", "", {
 	callback = function()
-		if vim.bo.filetype == "rust" then
-			require("rust-tools").debuggables.debuggables()
-		else
-			if vim.fn.filereadable(".vscode/launch.json") then
-				require("dap.ext.vscode").load_launchjs(
-					nil,
-					{ codelldb = { "rust" }, lldb = { "rust" }, coreclr = { "cs" } }
-				)
-			end
-			require("dap").continue()
+		if vim.fn.filereadable(".vscode/launch.json") then
+			require("dap.ext.vscode").load_launchjs(
+				nil,
+				{ codelldb = { "rust" }, lldb = { "rust" }, coreclr = { "cs" } }
+			)
 		end
+		require("dap").continue()
 	end,
 	noremap = true,
 	silent = true,

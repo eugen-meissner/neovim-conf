@@ -13,3 +13,5 @@ dap.adapters.coreclr = {
 	command = "netcoredbg",
 	args = { "--interpreter=vscode" },
 }
+
+dap.adapters.lldb = dap.adapters.codelldb
