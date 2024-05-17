@@ -105,6 +105,7 @@ keymap("n", "<F10>", "<cmd>lua require'dap'.step_over()<cr>", opts)
 keymap("n", "<S-F10>", "<cmd>lua require'dap'.step_out()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>q", "<cmd>lua require'dap'.terminate()<cr>", opts)
+keymap("n", "<space>?", "<cmd>lua require'dapui'.eval(nil, { enter=true })<cr>", opts)
 
 -- NvimTree
 keymap("n", "<C-n>", "<cmd> NvimTreeToggle <CR>", opts)
