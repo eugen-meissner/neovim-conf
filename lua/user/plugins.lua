@@ -161,7 +161,19 @@ return packer.startup(function(use)
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
-	use({ "TimUntersberger/neogit", branch = "master" })
+	use({
+		"NeogitOrg/neogit",
+		requires = {
+			"nvim-lua/plenary.nvim", -- required
+			"sindrets/diffview.nvim", -- optional - Diff integration
+
+			-- Only one of these is needed, not both.
+			"nvim-telescope/telescope.nvim", -- optional
+			"ibhagwan/fzf-lua",
+		},
+		config = true,
+		tag = "v0.0.1",
+	})
 	use({ "APZelos/blamer.nvim" })
 
 	-- Testing

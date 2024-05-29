@@ -1,6 +1,5 @@
 local lsp_servers = {
 	"lua_ls",
-	"omnisharp",
 	"cssls",
 	"html",
 	"tailwindcss",
@@ -9,7 +8,6 @@ local lsp_servers = {
 	"bashls",
 	"jsonls",
 	"yamlls",
-	"hls",
 	"eslint",
 	"terraformls",
 	"lemminx",
@@ -29,10 +27,10 @@ local settings = {
 }
 
 require("mason").setup(settings)
--- require("mason-lspconfig").setup({
--- 	ensure_installed = lsp_servers,
--- 	automatic_installation = true,
--- })
+require("mason-lspconfig").setup({
+	ensure_installed = lsp_servers,
+	automatic_installation = true,
+})
 require("mason-nvim-dap").setup({
 	-- Makes a best effort to setup the various debuggers with
 	-- reasonable debug configurations
