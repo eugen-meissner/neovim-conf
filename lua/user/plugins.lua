@@ -73,15 +73,6 @@ return packer.startup(function(use)
 		end,
 	})
 
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = "cd app && npm install",
-		setup = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = { "markdown" },
-	})
-
 	-- Useless but fun?
 	use("eandrju/cellular-automaton.nvim")
 
@@ -172,7 +163,6 @@ return packer.startup(function(use)
 			"ibhagwan/fzf-lua",
 		},
 		config = true,
-		tag = "v0.0.1",
 	})
 	use({ "APZelos/blamer.nvim" })
 

@@ -3,6 +3,7 @@ local lsp_servers = {
 	"cssls",
 	"html",
 	"tailwindcss",
+	"omnisharp",
 	"tsserver",
 	"pyright",
 	"bashls",
@@ -31,6 +32,7 @@ require("mason-lspconfig").setup({
 	ensure_installed = lsp_servers,
 	automatic_installation = true,
 })
+
 require("mason-nvim-dap").setup({
 	-- Makes a best effort to setup the various debuggers with
 	-- reasonable debug configurations
