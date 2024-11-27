@@ -40,12 +40,12 @@ keymap("n", "<leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", opts)
 keymap("n", "<leader>4", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", opts)
 keymap("n", "<leader>5", "<cmd>lua require('harpoon.term').gotoTerminal(5)<CR>", opts)
 
--- Copilot
-keymap("n", "<F2>", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
-keymap("i", "<C-CR>", "<cmd>lua require('copilot.suggestion').accept()<CR>", opts)
-keymap("i", "<C-BS>", "<cmd>lua require('copilot.suggestion').reject()<CR>", opts)
-keymap("i", "<C-,>", "<cmd>lua require('copilot.suggestion').prev()<CR>", opts)
-keymap("i", "<C-.>", "<cmd>lua require('copilot.suggestion').next()<CR>", opts)
+-- Codium
+-- keymap("n", "<F2>", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
+-- keymap("i", "<C-CR>", "<cmd>call codium#Accept()<CR>", opts)
+-- keymap("i", "<C-BS>", "<cmd>lua require('copilot.suggestion').reject()<CR>", opts)
+-- keymap("i", "<C-,>", "<cmd>lua require('copilot.suggestion').prev()<CR>", opts)
+-- keymap("i", "<C-.>", "<cmd>lua require('copilot.suggestion').next()<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)

@@ -4,7 +4,7 @@ local lsp_servers = {
 	"html",
 	"tailwindcss",
 	"omnisharp",
-	"tsserver",
+	"ts_ls",
 	"pyright",
 	"bashls",
 	"jsonls",

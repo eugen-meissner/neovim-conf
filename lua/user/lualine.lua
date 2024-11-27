@@ -21,7 +21,7 @@ local diff = {
 	"diff",
 	colored = false,
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width
+	cond = hide_in_width,
 }
 
 local mode = {
@@ -47,6 +47,10 @@ local location = {
 	"location",
 	padding = 0,
 }
+
+local codium = function()
+	return "(ﾉ☉ヮ⚆)ﾉ ⌒*:･ﾟ✧ " .. vim.api.nvim_call_function("codeium#GetStatusString", {})
+end
 
 -- cool function for progress
 local progress = function()
@@ -74,7 +78,7 @@ lualine.setup({
 	sections = {
 		lualine_a = { branch, diagnostics },
 		lualine_b = { mode },
-		lualine_c = {},
+		lualine_c = { codium },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_y = { location },

@@ -110,7 +110,7 @@ local mappings = {
 	c = {
 		name = "Code",
 		a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
-		c = { "<cmd>Copilot panel<cr>", "Suggestions" },
+		c = { "<cmd>lua require('telescope.builtin').lsp_references()<cr>", "References" },
 		d = {
 			"<cmd>Telescope diagnostics bufnr=0<cr>",
 			"Document Diagnostics",

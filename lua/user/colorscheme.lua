@@ -1,4 +1,4 @@
-local colorscheme = "kanagawa-dragon"
+local colorscheme = "retrobox"
 
 if colorscheme == "moonlight" then
 	vim.g.moonlight_italic_comments = true

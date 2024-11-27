@@ -109,7 +109,7 @@ return packer.startup(function(use)
 	use({ "jay-babu/mason-nvim-dap.nvim" })
 	use({ "Hoffs/omnisharp-extended-lsp.nvim" })
 	-- use({ "Decodetalkers/csharpls-extended-lsp.nvim" })
-	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
+	use({ "nvimtools/none-ls.nvim" }) -- for formatters and linters
 	use({ "RRethy/vim-illuminate" })
 	use({ "folke/trouble.nvim" })
 	use({ "ray-x/lsp_signature.nvim" })
@@ -184,39 +184,23 @@ return packer.startup(function(use)
 	use({ "theHamsta/nvim-dap-virtual-text" })
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
 
-	-- Copilot
+	--AI
 	use({
-		"zbirenbaum/copilot.lua",
-		event = "VimEnter",
+		"Exafunction/codeium.vim",
 		config = function()
-			vim.defer_fn(function()
-				require("copilot").setup({
-					suggestion = {
-						enabled = true,
-						auto_trigger = true,
-						debounce = 75,
-					},
-				})
-			end, 100)
-		end,
-	})
-	use({
-		"zbirenbaum/copilot-cmp",
-		after = { "copilot.lua" },
-		config = function()
-			require("copilot_cmp").setup()
-		end,
-	})
-
-	-- AI tools
-	use({
-		"dpayne/CodeGPT.nvim",
-		requires = {
-			"MunifTanjim/nui.nvim",
-			"nvim-lua/plenary.nvim",
-		},
-		config = function()
-			require("codegpt.config")
+			-- Change '<C-g>' here to any keycode you like.
+			vim.keymap.set("i", "<c-cr>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true, silent = true })
+			vim.keymap.set("i", "<C-.>", function()
+				return vim.fn["codeium#CycleCompletions"](1)
+			end, { expr = true, silent = true })
+			vim.keymap.set("i", "<C-,>", function()
+				return vim.fn["codeium#CycleCompletions"](-1)
+			end, { expr = true, silent = true })
+			vim.keymap.set("i", "<C-BS>", function()
+				return vim.fn["codeium#Clear"]()
+			end, { expr = true, silent = true })
 		end,
 	})
 
